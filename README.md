@@ -71,6 +71,28 @@ pnpm run start --character ./telegram.json
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
 
+#### 3.5 遇到的一些问题
+
+1. install 、build 失败
+
+检查自己的nodejs 版本、 commandline tools 、 和 tag 
+
+2. build 总是失败
+
+尝试 clean
+
+```shell
+pnpm run clean 
+pnpm run install 
+pnpm run build 
+```
+
+3. 修改了部分代码后不生效
+
+1) pnpm run build 后运行， 因为 pnpm run start 是 使用 build 后的文件
+2) 使用 pnpm run dev 代替 pnpm run start
+
+
 ## module 2 给 agent 记忆，使用自己的知识库
 
 ## module 3 编写自己的第一个 plugin
