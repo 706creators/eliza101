@@ -44,16 +44,32 @@ pnpm run start
 
 ```shell
 TELEGRAM_BOT_TOKEN=.....
-REDPILL_API_KEY=sk-.....                       # REDPILL API Key
+```
+
+#### 3.4 选择你的大模型服务
+
+使用 OpenAI 最简单:
+
+直接配置:
+
+```shell
+OPENAI_API_KEY=                        # OpenAI API key, starting with sk-
+```
+
+[redpill](https://redpill.ai/)
+
+```shell
+REDPILL_API_KEY=sk-.....        # REDPILL API Key
 REDPILL_MODEL=
 SMALL_REDPILL_MODEL=            # Default: gpt-4o-mini
 MEDIUM_REDPILL_MODEL=           # Default: gpt-4o
 LARGE_REDPILL_MODEL=            # Default: gpt-4o
 ```
 
-[redpill](https://redpill.ai/)
+#### 3.5 配置一个character.json
 
-#### 3.3 配置一个character.json
+- 定义 clients
+- 定义模型提供商
 
 ```json
 ....
@@ -63,7 +79,7 @@ LARGE_REDPILL_MODEL=            # Default: gpt-4o
   
 ```
 
-#### 3.4 启动 telegram bot 测试
+#### 3.6 启动 telegram bot 测试
 
 ```shell
 pnpm run start --character ./telegram.json
@@ -71,11 +87,11 @@ pnpm run start --character ./telegram.json
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
 
-#### 3.5 遇到的一些问题
+#### 3.7 遇到的一些问题
 
 1. install 、build 失败
 
-检查自己的nodejs 版本、 commandline tools 、 和 tag 
+检查自己的nodejs 版本、 commandline tools 、 和 tag
 
 2. build 总是失败
 
