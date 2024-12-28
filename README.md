@@ -44,46 +44,22 @@ pnpm run start
 
 ```shell
 TELEGRAM_BOT_TOKEN=.....
-REDPILL_API_KEY=sk-1ME43YKeXAOwSmx9Wp3Co0FX8DSNvBSRj8wDrVEDaGXZzglm                     # REDPILL API Key
+REDPILL_API_KEY=sk-.....                       # REDPILL API Key
 REDPILL_MODEL=
 SMALL_REDPILL_MODEL=            # Default: gpt-4o-mini
 MEDIUM_REDPILL_MODEL=           # Default: gpt-4o
 LARGE_REDPILL_MODEL=            # Default: gpt-4o
 ```
 
+[redpill](https://redpill.ai/)
+
 #### 3.3 配置一个character.json
 
 ```json
-{
-    "name": "CreatorsCommunity",
-    "clients": ["telegram"],
-    "bio": [
-      "eliza101 is a helpful assistant,helps you to learn and grow",
-    ],
-    "lore": [
-      "eliza101 is a helpful assistant,helps you to learn and grow"
-    ],
-    "modelProvider": "redpill",
-    "settings": {
-      "secrets": {}
-    },
-    "plugins": [],
-    "messageExamples": [
-      [],
-    ],
-    "postExamples": [
-    ],
-    "adjectives": [
-    ],
-    "topics": [],
-    "knowledge": [],
-    "style": {
-      "all": [],
-      "chat": [],
-      ],
-      "post": []
-    }
-  }
+....
+"clients": ["telegram"],
+"modelProvider": "redpill",
+....
   
 ```
 
