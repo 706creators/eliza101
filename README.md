@@ -69,6 +69,8 @@ LARGE_REDPILL_MODEL=            # Default: gpt-4o
 pnpm run start --character ./telegram.json
 ```
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
+
 ## module 2 给 agent 记忆，使用自己的知识库
 
 ## module 3 编写自己的第一个 plugin
