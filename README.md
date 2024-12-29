@@ -26,27 +26,27 @@ pnpm install
 pnpm run build 
 ```
 
-#### 1.2 start 启动
+#### 1.2 start 启动 `eliza`
 
 ```shell
 cp .env.example .env
 pnpm run start
 ```
 
-### 3. 配置 telegram bot
+### 1.3 配置 telegram bot
 
-#### 3.1 申请一个 telegram bot 获取 token
+#### 1. 申请一个 telegram bot 获取 token
 
 添加 <https://t.me/botfather。>
 使用 /newbot 创建 一个 bot ， 然后 获取 token
 
-#### 3.2 配置 .env 和 model
+#### 2. 配置 .env 和 model
 
 ```shell
 TELEGRAM_BOT_TOKEN=.....
 ```
 
-#### 3.4 选择你的大模型服务
+#### 3. 选择你的大模型服务
 
 使用 OpenAI 最简单:
 
@@ -66,7 +66,7 @@ MEDIUM_REDPILL_MODEL=           # Default: gpt-4o
 LARGE_REDPILL_MODEL=            # Default: gpt-4o
 ```
 
-#### 3.5 配置一个character.json
+#### 4. 配置一个character.json
 
 - 定义 clients
 - 定义模型提供商
@@ -79,7 +79,7 @@ LARGE_REDPILL_MODEL=            # Default: gpt-4o
   
 ```
 
-#### 3.6 启动 telegram bot 测试
+#### 5. 启动 telegram bot 测试
 
 ```shell
 pnpm run start --character ./telegram.json
@@ -87,7 +87,7 @@ pnpm run start --character ./telegram.json
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
 
-#### 3.7 遇到的一些问题
+#### 3. 遇到的一些问题
 
 1. install 、build 失败
 
