@@ -33,9 +33,9 @@ cp .env.example .env
 pnpm run start
 ```
 
-### 3. 配置 telegram bot
+### 1.3 配置 telegram bot
 
-#### 3.1 申请一个 telegram bot 获取 token
+#### 1. 申请一个 telegram bot 获取 token
 
 1. 添加 [BotFather](https://t.me/botfather)
 2. 使用 `/newbot` 创建一个 bot
@@ -78,7 +78,7 @@ LARGE_REDPILL_MODEL=            # Default: gpt-4o
 ....
 ```
 
-#### 3.6 启动 telegram bot 测试
+#### 5. 启动 telegram bot 测试
 
 ```shell
 pnpm run start --character ./telegram.json
@@ -86,7 +86,7 @@ pnpm run start --character ./telegram.json
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
 
-#### 3. 常见问题解决
+### 1.4 常见问题解决
 
 1. **Install、Build 失败**
    - 检查 NodeJS 版本
