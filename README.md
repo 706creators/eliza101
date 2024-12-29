@@ -20,8 +20,8 @@ nvm.sh ([查看安装文档](https://github.com/nvm-sh/nvm/blob/master/README.md
 git clone https://github.com/elizaOS/eliza.git
 cd eliza
 git checkout $(git describe --tags --abbrev=0) 
-# 或者使用 v0.1.6
-git checkout v0.1.6  相对稳定
+# 或者使用 v0.1.5-alpha.5
+git checkout v0.1.5-alpha.5 同时自带一个可以交互的 cli 环境
 pnpm install 
 pnpm run build 
 ```
