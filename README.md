@@ -12,7 +12,12 @@
 
 #### NodeJS 安装
 
-nvm.sh ([查看安装文档](https://github.com/nvm-sh/nvm/blob/master/README.md#install--update-script))
+使用[nvm](https://github.com/nvm-sh/nvm/blob/master/README.md#install--update-script)做版本控制。
+
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install v23.3.0
+```
 
 ##### 下载代码
 
