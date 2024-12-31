@@ -37,7 +37,7 @@ export function ModulePage(): ReactElement {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[50vh]">
-        <div className="text-white">Loading...</div>
+        <div className="text-gray-800 dark:text-gray-200">Loading...</div>
       </div>
     );
   }
@@ -45,7 +45,7 @@ export function ModulePage(): ReactElement {
   if (error) {
     return (
       <div className="flex justify-center items-center min-h-[50vh]">
-        <div className="text-white bg-red-500/20 backdrop-blur-sm rounded-lg p-4">
+        <div className="text-gray-800 dark:text-gray-200 bg-red-500/10 backdrop-blur-sm rounded-lg p-4">
           {error}
         </div>
       </div>

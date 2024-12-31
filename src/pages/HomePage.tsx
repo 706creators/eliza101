@@ -19,12 +19,14 @@ export function HomePage() {
           <Link
             key={module.id}
             to={`/module/${module.id}`}
-            className="block p-6 rounded-lg backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-colors"
+            className="group block p-6 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-[#FF7A00] dark:hover:border-[#FF7A00] transition-colors"
           >
-            <h2 className="text-xl font-semibold text-white mb-2">
+            <h2 className="text-xl font-semibold text-black dark:text-white group-hover:text-[#FF7A00] transition-colors mb-2">
               {module.title}
             </h2>
-            <p className="text-white/80">{module.description}</p>
+            <p className="text-gray-600 dark:text-gray-400">
+              {module.description}
+            </p>
           </Link>
         ))}
       </div>
