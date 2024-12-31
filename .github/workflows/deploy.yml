@@ -29,8 +29,8 @@ jobs:
       - name: Build
         run: npm run build
       
-      - name: Add cname 
-        run: echo "eliza101.xyz" > ./dist/CNAME
+      # - name: Add cname 
+      #   run: echo "eliza101.xyz" > ./dist/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
