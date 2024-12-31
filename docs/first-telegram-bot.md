@@ -1,4 +1,4 @@
-# Module 1: 快速开始，构建一个 Telegram 的 Chatbot
+# 快速开始，构建一个 Telegram 的 Chatbot
 
 ## 1 环境安装
 
