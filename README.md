@@ -56,9 +56,30 @@ TELEGRAM_BOT_TOKEN=.....
 
 ##### OpenAI (最简单方案)
 
-直接配置:
+直接配置
+
 ```shell
 OPENAI_API_KEY=                        # OpenAI API key, starting with sk-
+```
+
+最新版本的 `eliza` 支持了 自定义 URL和模型的功能
+
+```shell
+OPENAI_API_KEY=sk-                   # OpenAI API key, starting with sk-
+OPENAI_API_URL=                # OpenAI API Endpoint (optional), Default: https://api.openai.com/v1
+SMALL_OPENAI_MODEL=             # Default: gpt-4o-mini
+MEDIUM_OPENAI_MODEL=         # Default: gpt-4o
+LARGE_OPENAI_MODEL=           # Default: gpt-4o
+```
+
+通过配置，使用 `deepseek` 的模型
+
+```shell
+OPENAI_API_KEY=sk-                   # OpenAI API key, starting with sk-
+OPENAI_API_URL=https://api.deepseek.com                 # OpenAI API Endpoint (optional), Default: https://api.openai.com/v1
+SMALL_OPENAI_MODEL=deepseek-chat             # Default: gpt-4o-mini
+MEDIUM_OPENAI_MODEL=deepseek-chat            # Default: gpt-4o
+LARGE_OPENAI_MODEL=deepseek-chat             # Default: gpt-4o
 ```
 
 ##### [RedPill](https://redpill.ai/)
@@ -99,14 +120,16 @@ pnpm run start --character ./telegram.json
    - 检查 Git Tag
 
 2. **Build 总是失败**
-   尝试清理后重新安装：
-   ```shell
-   pnpm run clean 
-   pnpm run install 
-   pnpm run build 
-   ```
+   尝试清理后重新安装
+
+```shell
+pnpm run clean 
+pnpm run install 
+pnpm run build 
+```
 
 3. **修改代码后不生效**
+
    - 方案1: 修改后执行 `pnpm run build` 再运行
    - 方案2: 使用 `pnpm run dev` 代替 `pnpm run start`
 
