@@ -6,7 +6,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <Link to="/" className="inline-block">
           <h1 className="text-6xl font-bold text-black dark:text-white">
-            🤖 ELIZA 101
+            🤖 eliza 101
           </h1>
           <p className="mt-6 text-xl text-gray-600 dark:text-gray-300">
             Learn about one of the first chatbots in computer history
