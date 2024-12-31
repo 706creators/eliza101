@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, type ReactElement } from "react";
 import { useParams } from "react-router-dom";
 import { MarkdownContent } from "../components/MarkdownContent";
 
-export function ModulePage() {
+export function ModulePage(): ReactElement {
   const { id } = useParams<{ id: string }>();
   const [content, setContent] = useState<string>("");
   const [error, setError] = useState<string>("");
@@ -12,7 +12,9 @@ export function ModulePage() {
     async function loadContent() {
       try {
         setLoading(true);
-        const response = await fetch(`/docs/${id}.md`);
+        const response = await fetch(
+          `https://raw.githubusercontent.com/CreatorsDAO/eliza101/main/docs/${id}.md`
+        );
         if (!response.ok) {
           throw new Error("Content not found");
         }
