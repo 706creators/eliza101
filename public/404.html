@@ -3,24 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>ELIZA 101</title>
-    <script type="text/javascript">
-      // 单页应用的 GitHub Pages 重定向
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
+    <script>
+      // 获取当前 URL 的路径部分
+      const segment = 1;
+      const path = window.location.pathname;
+      
+      // 将路径信息编码并存储到 sessionStorage
+      sessionStorage.setItem('redirect', path);
+      
+      // 重定向到首页
+      window.location.replace('/');
     </script>
   </head>
   <body>
-    <script type="text/javascript">
-      // 重定向到首页
-      window.location.href = '/eliza101/';
-    </script>
+    <p>Redirecting...</p>
   </body>
 </html> 
