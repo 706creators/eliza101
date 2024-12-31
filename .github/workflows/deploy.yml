@@ -4,6 +4,12 @@ on:
   # 手动触发部署
   workflow_dispatch:
 
+# 添加权限配置
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
