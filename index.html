@@ -11,8 +11,19 @@
       } else {
         document.documentElement.classList.remove('dark')
       }
+      
+      // 处理重定向
+      (function() {
+        const redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          if (redirect !== location.pathname) {
+            history.replaceState(null, null, redirect);
+          }
+        }
+      })();
     </script>
-    <script type="module" crossorigin src="/assets/main-BK7NetdK.js"></script>
+    <script type="module" crossorigin src="/assets/main-CmC5ok0D.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/main-CR0en314.css">
   </head>
   <body>
