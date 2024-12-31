@@ -4,6 +4,10 @@ on:
   # 手动触发部署
   workflow_dispatch:
 
+  push:
+    branches:
+      - main
+
 # 添加权限配置
 permissions:
   contents: write
