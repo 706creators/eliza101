@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ELIZA 101</title>
-    <script type="module" crossorigin src="/assets/main-D6Pa8R4d.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-BCq6hTZQ.css">
+    <script>
+      // 在页面加载前初始化主题，避免闪烁
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-BK7NetdK.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-CR0en314.css">
   </head>
   <body>
     <div id="root"></div>
