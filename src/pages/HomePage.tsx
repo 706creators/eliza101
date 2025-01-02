@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-const modules = [
+const modules: {
+  id: string;
+  title: string;
+  description: string;
+}[] = [
   {
     id: "first-telegram-bot",
     title: "快速开始，构建一个 Telegram 的 Chatbot",
@@ -8,7 +12,6 @@ const modules = [
       "从环境配置到运行，完整指导如何使用 eliza 构建一个 Telegram Bot",
   },
   // Add more modules here
-  ,
 ];
 
 export function HomePage() {
