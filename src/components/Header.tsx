@@ -24,7 +24,7 @@ export function Header() {
                 eliza 101
               </h1>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                First chatbot in history
+                学习 AI Agent 开发的第一站
               </p>
             </div>
           </Link>
