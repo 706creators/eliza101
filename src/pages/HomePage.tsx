@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 const modules = [
   {
     id: "first-telegram-bot",
-    title: "Creating Your First Telegram Bot",
+    title: "快速开始，构建一个 Telegram 的 Chatbot",
     description:
-      "Learn how to create a simple Telegram bot using ELIZA principles",
+      "从环境配置到运行，完整指导如何使用 eliza 构建一个 Telegram Bot",
   },
   // Add more modules here
+  ,
 ];
 
 export function HomePage() {
