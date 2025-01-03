@@ -139,6 +139,6 @@ pnpm run build
    - 方案2
     使用 `pnpm run dev` 代替 `pnpm run start`
 
-### Youtube 视频
+## 5. 视频教程
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YRJFj6ku63E?si=MtQG0rbp86pGHA8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/YRJFj6ku63E/0.jpg)](https://www.youtube.com/watch?v=YRJFj6ku63E&list=PLDbawyynbWCro_7nakrikFc7o-FdmXvMM)
