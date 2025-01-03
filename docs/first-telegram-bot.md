@@ -108,6 +108,8 @@ LARGE_REDPILL_MODEL=            # Default: gpt-4o
 pnpm run start --character ./telegram.json
 ```
 
+最后，如果以上的各种方式
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
 
 ## 4 常见问题解决
@@ -136,3 +138,7 @@ pnpm run build
     
    - 方案2
     使用 `pnpm run dev` 代替 `pnpm run start`
+
+### Youtube 视频
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YRJFj6ku63E?si=MtQG0rbp86pGHA8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
