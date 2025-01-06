@@ -12,5 +12,9 @@ export const modules: Module[] = [
     description:
       "从环境配置到运行，完整指导如何使用 eliza 构建一个 Telegram Bot",
   },
-  // Add more modules here
+  {
+    id: "custom-agent-withmemory",
+    title: "让你的Agent拥有记忆",
+    description: "两种方式让你的Agent拥有资深的数据。",
+  },
 ];
