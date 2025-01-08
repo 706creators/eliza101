@@ -15,35 +15,24 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'pnpm'
 
-      - name: Install Pnpm 
-        run: npm install -g pnpm
+    - name: Install pnpm
+      run: npm install -g pnpm
 
-      - name: Install 
-        run: pnpm install
+    - name: Install dependencies
+      run: pnpm install
 
-      - name: Build
-        run: pnpm run build
-      
-      - name: Add cname 
-        run: echo "eliza101.xyz" > ./packages/page/dist//CNAME
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/page/dist/
-          # 保持提交历史
-          force_orphan: false
-          commit_message: 'deploy: ${{ github.event.head_commit.message }}' 
+    - name: Run build
+      run: pnpm run build
