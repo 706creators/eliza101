@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
+          cache: 'npm'
 
       - name: Install Pnpm 
         run: npm install -g pnpm
@@ -34,7 +34,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
       
       - name: Add cname 
         run: echo "eliza101.xyz" > ./packages/page/dist//CNAME
