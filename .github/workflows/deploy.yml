@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - main
+      
 
 # 添加权限配置
 permissions:
@@ -18,23 +19,24 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          version: 9.4.0
 
-      - name: Install Pnpm 
-        run: npm install -g pnpm
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "23"
+          cache: "pnpm"
 
-      - name: Install 
+      - name: Install dependencies
         run: pnpm install
 
-      - name: Build
-        run: npm run build
+      - name: Run build
+        run: pnpm run build
       
       - name: Add cname 
         run: echo "eliza101.xyz" > ./packages/page/dist//CNAME
