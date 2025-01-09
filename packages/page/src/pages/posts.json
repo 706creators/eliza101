@@ -1,0 +1,31 @@
+[
+  {
+    "title": "让你的Agent拥有记忆",
+    "description": "本文介绍了如何通过配置 `Character.json` 文件来为 Agent 添加记忆功能。内容包括 `name`、`clients`、`settings`、`bio` 和 `lore`、`knowledge` 以及 `llm 交互模版配置` 等字段的详细说明。通过这些配置，可以为 Agent 指定角色名称、绑定客户端、设置 LLM 的额外配置、添加角色背景信息和知识库，以及配置与 LLM 的交互模板。",
+    "id": "custom-agent-withmemory"
+  },
+  {
+    "title": "Guide to ElizaOS + Solana Agent Kit",
+    "description": "A comprehensive guide to understanding and utilizing ElizaOS in conjunction with the Solana Agent Kit, aimed at web3 developers looking to integrate these technologies into their projects.",
+    "id": "eliza-solana-agentkit"
+  },
+  {
+    "title": "快速开始，构建一个 Telegram 的 Chatbot",
+    "description": "本指南详细介绍了如何从零开始构建一个 Telegram Chatbot。内容包括环境安装、NodeJS 安装、代码下载、启动 eliza、配置 telegram bot、选择大模型服务、配置 character.json、启动 telegram bot 测试以及常见问题解决。此外，还提供了视频教程链接，帮助用户更直观地理解和操作。",
+    "id": "first-telegram-bot"
+  },
+  [
+    {
+      "title": "让你的Agent拥有记忆",
+      "description": "本文介绍了如何通过配置 `Character.json` 文件来为你的Agent添加记忆功能。内容包括 `name`、`clients`、`settings`、`bio`、`lore`、`knowledge` 和 `llm 交互模版配置` 等字段的详细说明，帮助你更好地理解和配置Agent的角色和功能。"
+    },
+    {
+      "title": "Guide to ElizaOS + Solana Agent Kit",
+      "description": "A comprehensive guide on integrating ElizaOS with the Solana Agent Kit, providing insights and step-by-step instructions for developers."
+    },
+    {
+      "title": "快速开始，构建一个 Telegram 的 Chatbot",
+      "description": "本指南详细介绍了如何从零开始构建一个 Telegram 的 Chatbot。内容包括环境安装、NodeJS 安装、代码下载、启动 eliza、配置 telegram bot、选择大模型服务、配置 character.json、启动 telegram bot 测试以及常见问题解决。此外，还提供了视频教程链接，帮助用户更直观地理解和操作。"
+    }
+  ]
+]

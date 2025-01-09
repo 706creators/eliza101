@@ -1,8 +1,8 @@
 {
-    "name": "eliza101",
     "private": true,
     "scripts": {
       "dev": "pnpm -r dev",
-      "build": "pnpm -r build"
+      "build": "pnpm --filter @eliza101/page run build",
+      "tools:summary": "pnpm --filter @eliza101/tools run summary --isRoot"
     }
   }

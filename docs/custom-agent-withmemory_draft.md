@@ -52,3 +52,5 @@
 `eliza` 会根据 `character.json` 中的 `templates` 配置，来和 `LLM` 进行交互。
 默认为空，使用的是默认的模版。
 
+
+### 1.7
