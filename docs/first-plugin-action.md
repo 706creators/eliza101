@@ -1,4 +1,4 @@
-# 扩展 eliza 的第一个 Action
+# 扩展 eliza : 构建你的第一个 Action
 
 ## 1.1 简介 plugin-twitter
 

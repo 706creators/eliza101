@@ -5,8 +5,13 @@
     "id": "first-telegram-bot"
   },
   {
-    "title": "扩展 eliza 的第一个 Action",
-    "description": "介绍了如何使用 plugin-twitter 插件扩展 eliza 的功能，包括插件的配置、测试启动命令以及代码解析。",
+    "title": "你的第一个 GitHub 讨论机器人",
+    "description": "本教程介绍了如何创建一个 GitHub 讨论机器人，包括 LLM API 的简介和调用、GitHub APP 的创建和相关权限、GitHub API 轮询 Discussions、自动触发 LLM 回复以及扩展功能。",
+    "id": "your-github-disscuss-bot"
+  },
+  {
+    "title": "扩展 eliza : 构建你的第一个 Action",
+    "description": "本文介绍了如何通过 plugin-twitter 插件扩展 eliza 的功能，包括插件的配置、测试和代码解析。插件链接为 [plugin-twitter](https://github.com/elizaOS/eliza/tree/main/packages/plugin-twitter)。在 Character.json 中添加插件配置后，可以通过命令行启动测试。插件的入口模块是 index.ts，需要导出 Plugin 对象，其中定义了插件的名称、描述、actions、evaluators 和 providers。",
     "id": "first-plugin-action"
   }
 ]
