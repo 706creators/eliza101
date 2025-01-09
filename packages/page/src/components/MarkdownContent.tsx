@@ -1,25 +1,17 @@
 import { ReactNode, type ReactElement } from "react";
 import ReactMarkdown from "react-markdown";
-import type { Components } from "react-markdown/lib/ast-to-react";
+import type { Components } from "react-markdown";
+
+const baseUrl = "https://github.com/CreatorsDAO/eliza101/blob/main/docs/";
 
 interface MarkdownContentProps {
   content: string;
 }
 
 const components: Partial<Components> = {
-  img: ({
-    node,
-    src,
-    alt,
-    ...props
-  }: {
-    node: any;
-    src: string;
-    alt: string;
-    props: any;
-  }) => (
+  img: ({ src, alt, ...props }) => (
     <img
-      src={`https://github.com/CreatorsDAO/eliza101/blob/main/docs/${src}?raw=true`}
+      src={`${baseUrl}${src}?raw=true`}
       alt={alt || "Image"}
       className="w-full h-auto"
       loading="lazy"
