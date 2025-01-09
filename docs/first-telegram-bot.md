@@ -108,7 +108,7 @@ LARGE_REDPILL_MODEL=            # Default: gpt-4o
 pnpm run start --character ./telegram.json
 ```
 
-最后，如果以上的各种方式
+最后，如果以上的各种方式都不能搭建起你的开发环境，那么你可以点击如下的链接，启动 `Gitpod` 环境，在云端进行开发。
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
 
