@@ -3,6 +3,7 @@
     "scripts": {
       "dev": "pnpm -r dev",
       "build": "pnpm --filter @eliza101/page run build",
-      "tools:summary": "pnpm --filter @eliza101/tools run summary --isRoot"
+      "tools:summary": "pnpm --filter @eliza101/tools run summary --isRoot",
+      "publish": "pnpm publish -r --access public"
     }
   }

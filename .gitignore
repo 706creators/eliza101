@@ -4,3 +4,4 @@ dist-ssr
 *.local
 node_modules
 .env
+t.sh
