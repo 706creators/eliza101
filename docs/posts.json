@@ -1,7 +1,12 @@
 [
   {
     "title": "快速开始，构建一个 Telegram 的 Chatbot",
-    "description": "本教程详细介绍了如何从零开始构建一个 Telegram 的 Chatbot。内容包括环境安装、NodeJS 安装、代码下载与启动、Telegram Bot 的配置与测试、常见问题解决以及视频教程。通过本教程，用户可以学习到如何使用不同的模型服务（如 OpenAI 和 RedPill）来配置 Chatbot，并解决在安装和运行过程中可能遇到的问题。",
+    "description": "本指南详细介绍了如何从零开始构建一个 Telegram 的 Chatbot。内容包括环境安装、NodeJS 安装、代码下载、启动 eliza、配置 telegram bot、选择大模型服务、配置 character.json、启动 telegram bot 测试以及常见问题解决。此外，还提供了视频教程链接，帮助用户更直观地理解和操作。",
     "id": "first-telegram-bot"
+  },
+  {
+    "title": "扩展 eliza 的第一个 Action",
+    "description": "介绍了如何使用 plugin-twitter 插件扩展 eliza 的功能，包括插件的配置、测试启动命令以及代码解析。",
+    "id": "first-plugin-action"
   }
 ]
