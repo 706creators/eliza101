@@ -1,4 +1,4 @@
-# 让你的Agent拥有记忆
+# RAG : 让你的Agent拥有记忆
 
 ## 1. Character.json 字段简述
 

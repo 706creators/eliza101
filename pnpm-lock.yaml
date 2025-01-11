@@ -56,6 +56,9 @@ importers:
       axios:
         specifier: ^1.7.9
         version: 1.7.9
+      commander:
+        specifier: ^13.0.0
+        version: 13.0.0
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
@@ -674,6 +677,10 @@ packages:
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
+
+  commander@13.0.0:
+    resolution: {integrity: sha512-oPYleIY8wmTVzkvQq10AEok6YcTC4sRUBl8F9gVuwchGVUCTbl/vhLTaQqutuuySYOsu8YTgV+OxKc/8Yvx+mQ==}
+    engines: {node: '>=18'}
 
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
@@ -2146,6 +2153,8 @@ snapshots:
       delayed-stream: 1.0.0
 
   comma-separated-tokens@2.0.3: {}
+
+  commander@13.0.0: {}
 
   commander@4.1.1: {}
 

@@ -1,17 +1,104 @@
 [
   {
     "title": "快速开始，构建一个 Telegram 的 Chatbot",
-    "description": "本指南详细介绍了如何从零开始构建一个 Telegram 的 Chatbot。内容包括环境安装、NodeJS 安装、代码下载、启动 eliza、配置 telegram bot、选择大模型服务、配置 character.json、启动 telegram bot 测试以及常见问题解决。此外，还提供了视频教程链接，帮助用户更直观地理解和操作。",
+    "description": "本指南详细介绍了如何从零开始构建一个 Telegram 聊天机器人。内容包括环境安装、NodeJS 安装、代码下载、启动 eliza、配置 telegram bot、选择大模型服务、配置 character.json、启动 telegram bot 测试以及常见问题解决。此外，还提供了视频教程链接，帮助用户更直观地理解和操作。",
     "id": "first-telegram-bot"
   },
   {
     "title": "你的第一个 GitHub 讨论机器人",
-    "description": "本教程介绍了如何创建一个 GitHub 讨论机器人，包括 LLM API 的简介和调用、GitHub APP 的创建和相关权限、GitHub API 轮询 Discussions、自动触发 LLM 回复以及扩展功能。",
+    "description": "本教程介绍了如何创建一个 GitHub 讨论机器人，涵盖了从 LLM API 的调用到 Github APP 的创建和权限设置，再到通过 Github API 轮询 Discussions 并自动触发 LLM 回复的完整流程。最后还提供了扩展功能的思路。",
     "id": "your-github-disscuss-bot"
   },
+  [
+    {
+      "title": "🧩 Plugins",
+      "description": "Eliza's plugin system provides a modular way to extend the core functionality with additional features, actions, evaluators, and providers. Plugins are self-contained modules that can be easily added or removed to customize your agent's capabilities."
+    },
+    {
+      "title": "Core Plugin Concepts",
+      "description": "Each plugin in Eliza must implement the `Plugin` interface with properties like `name`, `description`, `actions`, `evaluators`, `providers`, and `services`."
+    },
+    {
+      "title": "Using Plugins",
+      "description": "Plugins can be installed using `pnpm add` and registered in the character configuration. Example plugins include `bootstrapPlugin`, `imageGenerationPlugin`, and `buttplugPlugin`."
+    },
+    {
+      "title": "Available Plugins",
+      "description": "Eliza offers various plugins such as `Bootstrap Plugin`, `Image Generation Plugin`, `Node Plugin`, `Solana Plugin`, `Coinbase Commerce Plugin`, `Coinbase MassPayments Plugin`, `Coinbase Token Contract Plugin`, `TEE Plugin`, `Webhook Plugin`, and `Fuel Plugin`."
+    },
+    {
+      "title": "Bootstrap Plugin",
+      "description": "Provides essential baseline functionality including actions like `continue`, `followRoom`, and `unfollowRoom`, evaluators like `fact` and `goal`, and providers like `boredom`, `time`, and `facts`."
+    },
+    {
+      "title": "Image Generation Plugin",
+      "description": "Enables AI image generation capabilities with actions like `GENERATE_IMAGE` and supports multiple image generation services."
+    },
+    {
+      "title": "Node Plugin",
+      "description": "Provides core Node.js-based services such as `BrowserService`, `ImageDescriptionService`, `LlamaService`, `PdfService`, `SpeechService`, `TranscriptionService`, and `VideoService`."
+    },
+    {
+      "title": "Solana Plugin",
+      "description": "Integrates Solana blockchain functionality with evaluators like `trustEvaluator` and providers like `walletProvider` and `trustScoreProvider`. Also includes charity contribution features."
+    },
+    {
+      "title": "Coinbase Commerce Plugin",
+      "description": "Integrates Coinbase Commerce for payment and transaction management with actions like `CREATE_CHARGE`, `GET_ALL_CHARGES`, and `GET_CHARGE_DETAILS`."
+    },
+    {
+      "title": "Coinbase MassPayments Plugin",
+      "description": "Facilitates cryptocurrency mass payouts with actions like `SEND_MASS_PAYOUT` and providers like `massPayoutProvider`. Supports networks like Base, Solana, Ethereum, Arbitrum, and Polygon."
+    },
+    {
+      "title": "Coinbase Token Contract Plugin",
+      "description": "Enables deployment and interaction with token contracts (ERC20, ERC721, ERC1155) using the Coinbase SDK. Includes actions like `DEPLOY_TOKEN_CONTRACT` and `INVOKE_CONTRACT`."
+    },
+    {
+      "title": "TEE Plugin",
+      "description": "Integrates Dstack SDK to enable TEE (Trusted Execution Environment) functionality. Includes providers like `deriveKeyProvider` and `remoteAttestationProvider`."
+    },
+    {
+      "title": "Webhook Plugin",
+      "description": "Manages webhooks using the Coinbase SDK with actions like `CREATE_WEBHOOK` and providers like `webhookProvider`."
+    },
+    {
+      "title": "Fuel Plugin",
+      "description": "Provides an interface to the Fuel Ignition blockchain with actions like `TRANSFER_FUEL_ETH`."
+    },
+    {
+      "title": "Writing Custom Plugins",
+      "description": "Custom plugins can be created by implementing the `Plugin` interface and defining properties like `name`, `description`, `actions`, `evaluators`, `providers`, and `services`."
+    },
+    {
+      "title": "Best Practices",
+      "description": "Key best practices include modularity, clear documentation of dependencies, robust error handling, comprehensive documentation, and thorough testing."
+    },
+    {
+      "title": "Plugin Development Guidelines",
+      "description": "Guidelines for developing actions, evaluators, and providers include implementing the respective interfaces, providing clear validation logic, and handling errors gracefully."
+    },
+    {
+      "title": "Common Issues & Solutions",
+      "description": "Common issues include plugin loading problems and service registration errors. Solutions involve checking plugin loading and proper service registration."
+    },
+    {
+      "title": "Future Extensions",
+      "description": "Future extensions may include database adapters, authentication providers, custom model providers, external API integrations, workflow automation, and custom UI components."
+    },
+    {
+      "title": "Contributing",
+      "description": "To contribute a new plugin, follow the plugin structure guidelines, include comprehensive documentation, add tests, submit a pull request, and update the plugin registry."
+    }
+  ],
   {
     "title": "扩展 eliza : 构建你的第一个 Action",
-    "description": "本文介绍了如何通过 plugin-twitter 插件扩展 eliza 的功能，包括插件的配置、测试和代码解析。插件链接为 [plugin-twitter](https://github.com/elizaOS/eliza/tree/main/packages/plugin-twitter)。在 Character.json 中添加插件配置后，可以通过命令行启动测试。插件的入口模块是 index.ts，需要导出 Plugin 对象，其中定义了插件的名称、描述、actions、evaluators 和 providers。",
+    "description": "本文介绍了如何使用 plugin-twitter 插件扩展 eliza，包括插件的配置、测试和代码解析。插件链接为 [plugin-twitter](https://github.com/elizaOS/eliza/tree/main/packages/plugin-twitter)。在 Character.json 中添加插件配置后，可以通过命令行启动测试。插件的入口模块是 index.ts，需要导出 Plugin 对象，其中定义了插件的相关配置。",
     "id": "first-plugin-action"
+  },
+  {
+    "title": "RAG : 让你的Agent拥有记忆",
+    "description": "本文介绍了如何通过RAG技术为Agent添加记忆功能，详细解析了Character.json文件中的各个字段，包括name、clients、settings、bio、lore、knowledge以及llm交互模版配置等。",
+    "id": "custom-agent-withmemory"
   }
 ]
