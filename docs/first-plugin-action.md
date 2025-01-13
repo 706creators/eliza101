@@ -218,3 +218,7 @@ export interface Content {
 ```
 
 在 Content 中，指定 其他 Action 的ID ，就可以把消息路由给其他的插件 Action 模块。
+
+### Provider 调用:
+
+在 `eliza`中 Provider 提供一个通用的 get 方法用于对外输出数据。
