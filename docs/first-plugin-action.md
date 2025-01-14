@@ -219,6 +219,74 @@ export interface Content {
 
 在 Content 中，指定 其他 Action 的ID ，就可以把消息路由给其他的插件 Action 模块。
 
-### Provider 调用:
+一个 Action 的大致流程:
+
+```ts
+if (!state) {
+    state = (await runtime.composeState(message)) as State;
+} else {
+    state = await runtime.updateRecentMessageState(state);
+}
+
+const context = composeContext({
+    state,
+    template: chargeTemplate,
+});
+
+const chargeDetails = await generateObject({
+    runtime,
+    context,
+    modelClass: ModelClass.LARGE,
+    schema: ChargeSchema,
+});
+
+callback(
+{
+    text: "Hello world!!!!",
+},[]);
+```
+
+### Provider 调用
 
 在 `eliza`中 Provider 提供一个通用的 get 方法用于对外输出数据。
+
+在 `plugin` 的 Action 调用过程中，会检查 state 参数,如果没有，那么通过 runtime 构建:
+
+```ts
+if (!state) {
+    state = (await runtime.composeState(message)) as State;
+} else {
+    state = await runtime.updateRecentMessageState(state);
+}
+```
+
+构建过程中，需要注入所有注册了的Provider的 Get 数据
+
+```ts
+const [resolvedEvaluators, resolvedActions, providers] =
+await Promise.all([
+    Promise.all(evaluatorPromises),
+    Promise.all(actionPromises),
+    getProviders(this, message, initialState),
+]);
+```
+
+getProviders 方法:
+
+```ts
+export async function getProviders(
+    runtime: IAgentRuntime,
+    message: Memory,
+    state?: State
+) {
+    const providerResults = (
+        await Promise.all(
+            runtime.providers.map(async (provider) => {
+                return await provider.get(runtime, message, state);
+            })
+        )
+    ).filter((result) => result != null && result !== "");
+
+    return providerResults.join("\n");
+}
+```
