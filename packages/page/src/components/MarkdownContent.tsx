@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { funky } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { Loading } from "./Loading";
 
 const baseUrl = "https://github.com/CreatorsDAO/eliza101/blob/main/docs/";
 
@@ -13,12 +14,15 @@ interface MarkdownContentProps {
 export function MarkdownContent({
   content,
 }: MarkdownContentProps): ReactElement {
+  if (!content) {
+    return <Loading />;
+  }
+
   const components: Partial<Components> = {
     img: ({ src, alt, ...props }) => (
       <img
-        src={`${baseUrl}${src}?raw=true`}
+        src={src?.startsWith("http") ? src : `${baseUrl}${src}?raw=true`}
         alt={alt || "Image"}
-        className="w-full h-auto"
         loading="lazy"
         {...props}
       />
