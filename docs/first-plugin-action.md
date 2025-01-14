@@ -293,4 +293,4 @@ export async function getProviders(
 
 ## 1.4 plugin-sui 演示
 
-![alt text](imags/eliza-plugin-sui.png)
+![alt text](images/eliza-plugin-sui.png)
