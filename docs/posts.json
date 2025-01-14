@@ -1,12 +1,12 @@
 [
   {
     "title": "快速开始，构建一个 Telegram 的 Chatbot",
-    "description": "本指南详细介绍了如何从零开始构建一个 Telegram Chatbot。内容包括环境安装、NodeJS 安装、代码下载、启动 eliza、配置 telegram bot、选择大模型服务、配置 character.json、启动 telegram bot 测试以及常见问题解决。此外，还提供了视频教程链接，帮助用户更直观地理解和操作。",
+    "description": "本指南详细介绍了如何从零开始构建一个 Telegram 的 Chatbot。内容包括环境安装、NodeJS 安装、代码下载、启动 eliza、配置 telegram bot、选择大模型服务、配置 character.json、启动 telegram bot 测试以及常见问题解决。此外，还提供了视频教程链接，帮助用户更直观地理解和操作。",
     "id": "first-telegram-bot"
   },
   {
     "title": "扩展 eliza : 构建你的第一个 Plugin",
-    "description": "本文介绍了如何构建一个 eliza 插件，包括插件的结构、运行时调用、插件的测试和代码解析。插件结构包括 actions、services、providers 和 evaluators 等模块，运行时通过注册和初始化这些模块来扩展 agent 的功能。插件的测试包括配置和启动测试，代码解析部分介绍了插件的入口模块和配置。",
+    "description": "本文介绍了如何构建一个 eliza 插件，包括插件的结构、Action、Service、Provider 等模块的定义和使用方法，以及如何在 runtime 中调用和插件之间的互相调用。",
     "id": "first-plugin-action"
   }
 ]
