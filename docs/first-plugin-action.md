@@ -290,3 +290,7 @@ export async function getProviders(
     return providerResults.join("\n");
 }
 ```
+
+## 1.4 plugin-sui 演示
+
+![alt text](imags/eliza-plugin-sui.png)
