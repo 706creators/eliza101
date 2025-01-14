@@ -1,11 +1,8 @@
-import { ReactNode, type ReactElement, useEffect, useState } from "react";
+import { type ReactElement } from "react";
 import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  oneDark,
-  oneLight,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { funky } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 const baseUrl = "https://github.com/CreatorsDAO/eliza101/blob/main/docs/";
 
@@ -16,27 +13,6 @@ interface MarkdownContentProps {
 export function MarkdownContent({
   content,
 }: MarkdownContentProps): ReactElement {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    // 检查 HTML 根元素是否有 dark 类
-    const checkDarkMode = () => {
-      setIsDark(document.documentElement.classList.contains("dark"));
-    };
-
-    // 初始检查
-    checkDarkMode();
-
-    // 使用 MutationObserver 监听类变化
-    const observer = new MutationObserver(checkDarkMode);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   const components: Partial<Components> = {
     img: ({ src, alt, ...props }) => (
       <img
@@ -47,16 +23,15 @@ export function MarkdownContent({
         {...props}
       />
     ),
-    code: ({ inline, className, children, ...props }) => {
+
+    code({ node, inline, className, children, ...props }: any) {
       const match = /language-(\w+)/.exec(className || "");
+
       return !inline && match ? (
         <SyntaxHighlighter
-          style={isDark ? oneDark : oneLight}
-          language={match[1]}
+          style={funky}
           PreTag="div"
-          customStyle={{
-            background: isDark ? "#282c34" : "#f5f5f5",
-          }}
+          language={match[1]}
           {...props}
         >
           {String(children).replace(/\n$/, "")}
