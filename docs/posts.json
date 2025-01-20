@@ -1,17 +1,22 @@
 [
   {
+    "title": "扩展 eliza : 构建你的第一个 Plugin",
+    "description": "本文介绍了如何构建一个 eliza 插件，包括插件的结构、Action、Service、Provider 等模块的定义和使用方法。还详细说明了如何在 runtime 中调用插件、插件之间的互相调用，以及 Provider 的调用方式。最后提供了一个 plugin-sui 的演示和相关的视频教程链接。",
+    "id": "first-plugin-action"
+  },
+  {
+    "title": "Eliza 原理解析（上）：Agent 工具调用",
+    "description": "本文详细介绍了Eliza框架中Provider和Action的运行原理。Provider用于解决AI获取特定领域信息不准确的问题，通过封装代码获取数据并以自然语言形式返回给AI Model。Action则用于封装复杂的链上操作，帮助AI理解并执行任务。文章还探讨了如何让AI理解其调用的Action，并通过callback函数将执行结果加入AI的memory中。",
+    "id": "eliza-baiscs-call-tools"
+  },
+  {
     "title": "快速开始，构建一个 Telegram 的 Chatbot",
     "description": "本指南详细介绍了如何从零开始构建一个 Telegram 聊天机器人。内容包括环境安装、NodeJS 安装、代码下载、启动 eliza、配置 telegram bot、选择大模型服务、配置 character.json、启动 telegram bot 测试以及常见问题解决。此外，还提供了视频教程链接，帮助用户更直观地理解和操作。",
     "id": "first-telegram-bot"
   },
   {
-    "title": "扩展 eliza : 构建你的第一个 Plugin",
-    "description": "本文介绍了如何构建 eliza 插件，包括插件的结构、Action、Service、Provider 等模块的定义和使用方法，以及如何在 runtime 中调用插件和插件之间的互相调用。",
-    "id": "first-plugin-action"
-  },
-  {
-    "title": "Eliza 原理解析（上）：Agent 工具调用",
-    "description": "本文详细介绍了Eliza框架中Provider和Action的运行原理。Provider用于解决AI获取特定领域信息不准确的问题，通过封装代码获取数据并以自然语言形式返回给AI Model。Action则用于封装复杂的链上操作，帮助AI理解并执行任务。文章还探讨了如何让AI理解其调用的Action，并通过callback函数将执行结果存储到AI的Memory模块中。",
-    "id": "eliza-baiscs-call-tools"
+    "title": "Run Eliza With Tee",
+    "description": "介绍TEE 的相关知识，以及如何使用TEE 运行Eliza 的 AI Agent。作者 Twitter: https://x.com/zhou49。包含视频直播链接。",
+    "id": "tee-and-eliza"
   }
 ]
