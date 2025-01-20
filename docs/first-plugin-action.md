@@ -294,3 +294,7 @@ export async function getProviders(
 ## 1.4 plugin-sui 演示
 
 ![alt text](images/eliza-plugin-sui.png)
+
+## 1.5 视频教程
+
+[![Watch the video](https://img.youtube.com/vi/O4SNJRzJw3s/0.jpg)](https://www.youtube.com/watch?v=O4SNJRzJw3s&list=PLDbawyynbWCro_7nakrikFc7o-FdmXvMM)
