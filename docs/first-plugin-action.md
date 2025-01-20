@@ -297,4 +297,4 @@ export async function getProviders(
 
 ## 1.5 视频教程
 
-[![Watch the video](https://img.youtube.com/vi/O4SNJRzJw3s/0.jpg)](https://www.youtube.com/watch?v=O4SNJRzJw3s&list=PLDbawyynbWCro_7nakrikFc7o-FdmXvMM)
+[![Watch the video](https://img.youtube.com/vi/MWH-vl3Q9mM/0.jpg)](https://www.youtube.com/watch?v=MWH-vl3Q9mM&list=PLDbawyynbWCro_7nakrikFc7o-FdmXvMM)
