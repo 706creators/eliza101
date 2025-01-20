@@ -1,9 +1,8 @@
 # Run Eliza With Tee
 
-## 作者 Twitter:  https://x.com/zhou49
+## 作者 Twitter:  [https://x.com/zhou49](https://x.com/zhou49)
 
 介绍TEE 的相关知识，以及如何使用TEE 运行Eliza 的 AI Agent.
-
 
 <iframe src="https://pitch.com/v/tee-and-ai-agents---shelven-g4wd27" width="100%" height="100%" frameborder="0"></iframe>
 

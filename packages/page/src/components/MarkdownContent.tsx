@@ -4,6 +4,7 @@ import type { Components } from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { funky } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Loading } from "./Loading";
+import rehypeRaw from "rehype-raw";
 
 const baseUrl = "https://github.com/CreatorsDAO/eliza101/blob/main/docs/";
 
@@ -50,7 +51,9 @@ export function MarkdownContent({
 
   return (
     <article className="prose prose-gray dark:prose-invert max-w-4xl mx-auto px-4 py-8">
-      <ReactMarkdown components={components}>{content}</ReactMarkdown>
+      <ReactMarkdown rehypePlugins={[rehypeRaw]} components={components}>
+        {content}
+      </ReactMarkdown>
     </article>
   );
 }
