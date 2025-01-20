@@ -4,7 +4,7 @@
 
 介绍TEE 的相关知识，以及如何使用TEE 运行Eliza 的 AI Agent.
 
-<iframe src="https://pitch.com/v/tee-and-ai-agents---shelven-g4wd27" width="100%" height="100%" frameborder="0"></iframe>
+<iframe src="https://pitch.com/v/tee-and-ai-agents---shelven-g4wd27" width="800" height="600" frameborder="0"></iframe>
 
 ## 视频直播:
 
