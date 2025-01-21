@@ -3,7 +3,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { path: "/", label: "Home" },
-  { path: "/docs", label: "Docs" },
+  { path: "https://elizaos.github.io/eliza/", label: "Docs", external: true },
   {
     path: "https://github.com/CreatorsDAO/eliza101",
     label: "GitHub",
