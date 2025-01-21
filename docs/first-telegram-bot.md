@@ -80,7 +80,7 @@ MEDIUM_OPENAI_MODEL=deepseek-chat            # Default: gpt-4o
 LARGE_OPENAI_MODEL=deepseek-chat             # Default: gpt-4o
 ```
 
-#### [RedPill](https://redpill.ai/)
+#### [RedPill](https://red-pill.ai/)
 
 ```shell
 REDPILL_API_KEY=sk-.....        # REDPILL API Key
