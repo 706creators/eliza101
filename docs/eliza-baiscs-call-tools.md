@@ -2,7 +2,12 @@
 
 ## 作者 [0xhhh](https://x.com/hhh69251498) [cyl19970726](https://github.com/cyl19970726)
 
-## Eliza(https://github.com/elizaOS) 原理介绍（一）
+Twitter 原文
+
+- [https://x.com/hhh69251498/status/1873309705768198645](https://x.com/hhh69251498/status/1873309705768198645)
+- [https://x.com/hhh69251498/status/1874497625170518296](https://x.com/hhh69251498/status/1874497625170518296)
+
+## [Eliza](https://github.com/elizaOS) 原理介绍（一）
 
 这个系列会分成三部分来写:
 
