@@ -1,0 +1,46 @@
+name: Build and Push Eliza App Image
+
+on:
+  # 手动触发
+  workflow_dispatch:
+  # 当 eliza_app 目录发生变化时触发
+  push:
+    paths:
+      - "eliza_app/**"
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./eliza_app
+          file: ./eliza_app/Dockerfile
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/eliza-app:latest
+            ghcr.io/${{ github.repository_owner }}/eliza-app:${{ steps.date.outputs.date }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
