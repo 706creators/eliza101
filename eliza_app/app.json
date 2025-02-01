@@ -1,6 +1,8 @@
 {
     "name": "eliza101",
-    "clients": [],
+    "clients": [
+        "telegram"
+    ],
     "modelProvider": "redpill",
     "settings": {
         "voice": {
