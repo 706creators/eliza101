@@ -45,6 +45,10 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
+      - name: Remove patches
+        run: |
+          sed -i '/"@solana-developers\/helpers": "patches\/@solana-developers__helpers.patch"/d' package.json
+
       - name: Set up Docker Buildx
         if: steps.check_image.outputs.exists != 'true'
         uses: docker/setup-buildx-action@v3
