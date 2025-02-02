@@ -25,7 +25,12 @@ jobs:
           cd eliza
           # 获取最新的tag
           git fetch --tags
-          LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          # 只匹配 v*.x.x 格式的tag
+          LATEST_TAG=$(git tag -l 'v*.*.*' | sort -V | tail -n1)
+          if [ -z "$LATEST_TAG" ]; then
+            echo "No matching v0.x.x tag found"
+            exit 1
+          fi
           git checkout $LATEST_TAG
           echo "Using Eliza version: $LATEST_TAG"
           echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
