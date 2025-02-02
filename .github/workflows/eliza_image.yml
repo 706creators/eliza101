@@ -37,12 +37,12 @@ jobs:
           TOKEN=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://ghcr.io/token\?scope\="repository:${{ github.repository_owner }}/eliza:pull")
           TOKEN=$(echo $TOKEN | jq -r .token)
           HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $TOKEN" \
-            "https://ghcr.io/v2/${{ github.repository_owner }}/eliza/manifests/${{ env.LATEST_TAG }}")
+            "https://ghcr.io/v2/${{ github.repository_owner }}/eliza/manifests/${{ env.LATEST_TAG_WITHOUT_PLUS }}")
           if [ "$HTTP_CODE" -eq "200" ]; then
-            echo "Image tag ${{ env.LATEST_TAG }} already exists, skipping build"
+            echo "Image tag ${{ env.LATEST_TAG_WITHOUT_PLUS }} already exists, skipping build"
             echo "exists=true" >> $GITHUB_OUTPUT
           else
-            echo "Image tag ${{ env.LATEST_TAG }} does not exist, proceeding with build"
+            echo "Image tag ${{ env.LATEST_TAG_WITHOUT_PLUS }} does not exist, proceeding with build"
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
