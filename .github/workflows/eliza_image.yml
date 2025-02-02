@@ -25,10 +25,10 @@ jobs:
           cd eliza
           # 获取最新的tag
           git fetch --tags
-          # 只匹配 v*.x.x 格式的tag
-          LATEST_TAG=$(git tag -l 'v*.*.*' | sort -V | tail -n1)
+          # 只匹配纯数字版本的 v*.x.x 格式的tag
+          LATEST_TAG=$(git tag -l 'v*.*.*' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n1)
           if [ -z "$LATEST_TAG" ]; then
-            echo "No matching v0.x.x tag found"
+            echo "No matching v*.x.x tag found"
             exit 1
           fi
           git checkout $LATEST_TAG
