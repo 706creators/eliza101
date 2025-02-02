@@ -30,6 +30,7 @@ jobs:
           echo "Using Eliza version: $LATEST_TAG"
           echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
           echo "LATEST_TAG_WITHOUT_PLUS=${LATEST_TAG//+/}" >> $GITHUB_ENV
+          sed -i 's/pnpm@9.4.0/pnpm@9.15.4/' Dockerfile
 
       - name: Check if image exists
         id: check_image
