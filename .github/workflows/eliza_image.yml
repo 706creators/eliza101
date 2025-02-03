@@ -1,8 +1,13 @@
 name: Build and Push Eliza Docker Image
 
 on:
-  # 手动触发
+  # 手动触发时添加输入参数
   workflow_dispatch:
+    inputs:
+      tag_version:
+        description: "Specific tag version to build (e.g. v0.1.9). Leave empty for latest tag"
+        required: false
+        type: string
   # 也可以在发布新版本时自动触发
   schedule:
     - cron: "0 0 * * *" # 每天UTC 00:00运行
@@ -23,14 +28,25 @@ jobs:
         run: |
           git clone https://github.com/elizaos/eliza.git
           cd eliza
-          # 获取最新的tag
           git fetch --tags
-          # 只匹配纯数字版本的 v*.x.x 格式的tag
-          LATEST_TAG=$(git tag -l 'v*.*.*' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n1)
-          if [ -z "$LATEST_TAG" ]; then
-            echo "No matching v*.x.x tag found"
-            exit 1
+
+          if [ -n "${{ inputs.tag_version }}" ]; then
+            # 使用用户指定的tag
+            if git rev-parse "${{ inputs.tag_version }}" >/dev/null 2>&1; then
+              LATEST_TAG="${{ inputs.tag_version }}"
+            else
+              echo "Specified tag ${{ inputs.tag_version }} does not exist"
+              exit 1
+            fi
+          else
+            # 获取最新的符合条件的tag
+            LATEST_TAG=$(git tag -l 'v*.*.*' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n1)
+            if [ -z "$LATEST_TAG" ]; then
+              echo "No matching v*.x.x tag found"
+              exit 1
+            fi
           fi
+
           git checkout $LATEST_TAG
           echo "Using Eliza version: $LATEST_TAG"
           echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
