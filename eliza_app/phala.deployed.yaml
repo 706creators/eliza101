@@ -1,14 +1,16 @@
 services:
   eliza:
-    image: ghcr.io/706creators/eliza-app:20250201
+    image: ghcr.io/706creators/eliza-app:20250203
     container_name: eliza
-    stdin_open: true
-    tty: true
     environment:
-      - REDPILL_API_KEY=${REDPILL_API_KEY}
+      - REDPILL_API_KEY=${REDPIIL_API_KEY}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - SUI_PRIVATE_KEY=${SUI_PRIVATE_KEY}
+      - SUI_NETWORK=${SUI_NETWORK}
+      - DEFAULT_LOG_LEVEL=info
     ports:
       - "3000:3000"
+      - "5173:5173"
     deploy:
       resources:
         limits:
@@ -27,47 +29,3 @@ services:
         soft: 65536
         hard: 65536
     restart: always
-    
-  nginx:
-    image: phalanetwork/docker-log-api
-    container_name: logs
-    ports:
-      - "8080:80"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    deploy:
-      resources:
-        limits:
-          cpus: "0.2"
-          memory: 256M
-        reservations:
-          cpus: "0.05"
-          memory: 128M
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "50m"
-        max-file: "3"
-    ulimits:
-      nofile:
-        soft: 65536
-        hard: 65536
-    restart: unless-stopped
-    depends_on:
-      - mkswap
-  mkswap:
-    image: busybox
-    privileged: true
-    entrypoint: ["/bin/sh", "-c"]
-    command:
-      - |
-        if ! [ -f /host/swap0 ]; then 
-          fallocate -l 4G /host/swap0 && 
-          chmod 600 /host/swap0 && 
-          mkswap /host/swap0 && 
-          swapon /host/swap0
-        fi
-        echo 30 > /host/proc/sys/vm/swappiness
-    volumes:
-      - /:/host
-    restart: "no"
