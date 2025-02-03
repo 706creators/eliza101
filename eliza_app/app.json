@@ -3,7 +3,7 @@
     "clients": [
         "telegram"
     ],
-    "modelProvider": "redpill",
+    "modelProvider": "atoma",
     "settings": {
         "voice": {
             "model": "en_GB-alan-medium"

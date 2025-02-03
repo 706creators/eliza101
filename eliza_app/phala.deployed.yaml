@@ -3,6 +3,7 @@ services:
     image: ghcr.io/706creators/eliza-app:20250203
     container_name: eliza
     environment:
+      - ATOMASDK_BEARER_AUTH=${ATOMASDK_BEARER_AUTH}
       - REDPILL_API_KEY=${REDPIIL_API_KEY}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
       - SUI_PRIVATE_KEY=${SUI_PRIVATE_KEY}
