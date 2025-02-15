@@ -12,8 +12,7 @@ export const newOpenAI = () => {
     fetch: async (input: URL | RequestInfo, init?: RequestInit | undefined) => {
       const url = input.toString();
       if (init?.method === "POST" && init?.body) {
-        console.info(`do proxy request\n ${url} \n ${init.body}`);
-
+        console.info(`do proxy request\n ${url}`);
         const headers = new AxiosHeaders();
         headers.set("Content-Type", "application/json");
         headers.set("Authorization", `Bearer ${process.env.OPENAI_API_KEY}`);

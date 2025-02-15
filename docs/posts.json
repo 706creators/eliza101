@@ -1,27 +1,27 @@
 [
   {
+    "title": "快速开始，构建一个 Telegram 的 Chatbot",
+    "description": "本文介绍了如何从零开始构建一个 Telegram 聊天机器人。内容包括环境安装、NodeJS 配置、代码下载、启动流程、Telegram Bot 配置、模型选择、常见问题解决以及视频教程链接。",
+    "id": "1-first-telegram-bot"
+  },
+  {
+    "title": "Eliza 原理解析（上）：Agent 工具调用",
+    "description": "本文介绍了Eliza框架中Provider和Action的运行原理。Provider用于获取特定领域的信息，解决通用大模型在信息获取上的不足；Action则封装了AI执行的代码，帮助AI理解并执行复杂任务。文章还探讨了如何通过Provider和Action的结合，让AI在链上操作中更高效地执行任务。",
+    "id": "2-eliza-baiscs-call-tools"
+  },
+  {
     "title": "扩展 eliza : 构建你的第一个 Plugin",
-    "description": "本文介绍了如何为 eliza 构建插件，包括插件的基本结构、Action 和 Service 的定义与使用，以及如何在 runtime 中调用和注册插件模块。还详细说明了插件之间的互相调用方式，如调用其他插件的 Service 和 Action，以及 Provider 的使用。",
-    "id": "first-plugin-action"
+    "description": "本文介绍了如何构建 eliza 插件，包括插件的基本结构、Action 和 Service 的定义与使用，以及插件在 runtime 中的调用方式。还详细说明了插件之间的互相调用方法，如调用其他插件的 Service 和 Action，以及 Provider 的使用。最后，提供了 plugin-sui 的演示和视频教程链接。",
+    "id": "3-first-plugin-action"
+  },
+  {
+    "title": "Eliza 知识库与记忆系统",
+    "description": "Eliza 系统包含复杂的存储结构和缓存机制，支持多种数据库类型如 SQLite 和 Postgres。知识碎片通过 UUID 唯一标识，并分为文档管理和知识管理两部分处理。记忆系统通过 memoryManagers 管理不同类型的记忆，如消息、描述、知识等。系统还提供了 RAG 知识管理器用于高级知识处理。",
+    "id": "4-custom-agent-withmemory"
   },
   {
     "title": "Run Eliza With Tee",
     "description": "介绍TEE的相关知识，以及如何使用TEE运行Eliza的AI Agent。",
-    "id": "tee-and-eliza"
-  },
-  {
-    "title": "快速开始，构建一个 Telegram 的 Chatbot",
-    "description": "本文介绍了如何从零开始构建一个 Telegram 聊天机器人。内容包括环境安装、NodeJS 配置、代码下载与启动、Telegram Bot 的申请与配置、大模型服务的选择与配置、以及常见问题的解决方法。通过本文，开发者可以快速搭建并测试自己的 Telegram 聊天机器人。",
-    "id": "first-telegram-bot"
-  },
-  {
-    "title": "Eliza 原理解析（上）：Agent 工具调用",
-    "description": "本文介绍了Eliza框架中Provider和Action的运行原理。Provider用于获取特定领域的信息，解决通用大模型在信息获取上的不足；Action则封装了AI执行的具体操作，帮助AI理解并执行复杂任务。文章还探讨了如何通过Provider和Action的结合，使AI能够更准确地获取信息并执行相关操作。",
-    "id": "eliza-baiscs-call-tools"
-  },
-  {
-    "title": "Eliza 知识管理与存储结构",
-    "description": "Eliza 的存储结构包括缓存管理器和数据库适配器，支持多种数据库类型如 SQLite 和 Postgres。知识碎片通过 UUID 唯一标识，处理模块分为文档管理和知识管理两部分。记忆管理器包含多个组件，如消息管理器和知识管理器，支持扩展。知识存储与记忆存储有所区别，知识更通用，记忆与房间相关。",
-    "id": "custom-agent-withmemory"
+    "id": "5-tee-and-eliza"
   }
 ]

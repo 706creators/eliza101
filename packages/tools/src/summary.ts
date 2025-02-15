@@ -43,8 +43,9 @@ const main = async () => {
       name: file,
       time: fs.statSync(path.join(docsDir, file)).mtime.getTime(),
     }))
-    .sort((a, b) => a.time - b.time) // 按时间升序
+    .sort((a, b) => a.name.localeCompare(b.name))
     .map((file) => file.name); // 只返回文件名
+  console.log(files);
   const posts = [];
   for (let file of files) {
     if (!file.endsWith(".md") || file.endsWith("draft.md")) continue; // 跳过非 md 文件
