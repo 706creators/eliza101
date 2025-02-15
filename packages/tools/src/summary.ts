@@ -1,14 +1,14 @@
 import fs, { writeFileSync } from "fs";
 import dotenv from "dotenv";
 import path from "path";
-import { generateText, trimJSON } from "./openai";
+import { myGenerateText, trimJSON } from "./openai";
 
 // 获取项目根目录的 .env
 const rootEnvPath = path.join(__dirname, "..", "..", "..", ".env");
 dotenv.config({ path: rootEnvPath });
 
 const summaryPost = async (content: string) => {
-  const summary = await generateText(
+  const summary = await myGenerateText(
     {
       body: content,
     },

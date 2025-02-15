@@ -7,6 +7,7 @@
   "scripts": {
     "publish": "npm publish -r --access public",
     "summary": "ts-node src/summary.ts",
+    "test": "ts-node src/test.ts",
     "build": "tsc --outDir dist"
   },
   "bin": {
@@ -27,6 +28,8 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.1.11",
+    "ai": "^4.1.39",
     "axios": "^1.7.9",
     "commander": "^13.0.0",
     "dotenv": "^16.4.7"

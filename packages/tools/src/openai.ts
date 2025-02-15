@@ -1,3 +1,7 @@
+import { generateText } from "ai";
+import { openai } from "@ai-sdk/openai";
+import { newOpenAI } from "./tools";
+
 const renderTemplate = (
   template: string,
   state: Record<string, any>
@@ -18,34 +22,30 @@ const renderTemplate = (
   });
 };
 
-export const generateText = async (
+export const myGenerateText = async (
   state: { body: string },
   template: string
 ) => {
-  console.log(process.env.REDPILL_API_KEY);
+  // console.log(process.env.REDPILL_API_KEY);
   const content = renderTemplate(template, state);
-  // console.log("send : ", content);
 
-  const response = await fetch("https://api.deepseek.com/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.DEEPSEEK_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: process.env.MODEL,
-      messages: [{ role: "user", content: content }],
-    }),
+  const model = process.env.MODEL;
+  if (!model) {
+    throw new Error("MODEL is not set");
+  }
+
+  const openai = newOpenAI();
+  const response = await generateText({
+    model: openai(model),
+    system: "You are a friendly assistant!",
+    prompt: content,
   });
 
-  console.log("response : ", response.status);
-
-  const data = (await response.json()) as any;
-  return data.choices[0].message.content;
+  return response.text;
 };
 
 export const summaryContent = async (content: string) => {
-  const response = await generateText(
+  const response = await myGenerateText(
     {
       body: content,
     },
