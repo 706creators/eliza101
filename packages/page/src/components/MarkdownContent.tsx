@@ -8,7 +8,7 @@ import {
 import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { rainbow } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Loading } from "./Loading";
 import rehypeRaw from "rehype-raw";
 import mermaid from "mermaid";
@@ -89,7 +89,7 @@ export function MarkdownContent({
 
       return !inline && match ? (
         <SyntaxHighlighter
-          style={rainbow}
+          style={atomDark}
           PreTag="div"
           language={match[1]}
           {...props}
