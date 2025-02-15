@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.17",
+    "mermaid": "^11.4.1",
     "postcss": "^8.4.35",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",

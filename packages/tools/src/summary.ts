@@ -13,7 +13,10 @@ const summaryPost = async (content: string) => {
       body: content,
     },
     `
-  你是一个 web3 开发工程师，会把自己的学习笔记整理成 markdown 文件，请帮我汇总以下内容,输出成 json 内容,不要包含对应的 markdown 文件内容。
+  你是一个 web3 开发工程师，会把自己的学习笔记整理成 markdown 文件。
+  请帮我汇总以下内容。
+  汇总的内容，内容为中文，不要太长。
+  输出成 json 内容,不要包含对应的 markdown 文件内容。
 
   输出格式如下：
   {

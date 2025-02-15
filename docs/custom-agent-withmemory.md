@@ -3,7 +3,7 @@
 Tags: 706creators, eliza
 Date: February 12, 2025 → February 14, 2025
 
-## eliza 中的存储结构：
+## eliza 中的存储结构
 
 ```mermaid
 graph TD

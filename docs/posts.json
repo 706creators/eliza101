@@ -1,27 +1,27 @@
 [
   {
     "title": "扩展 eliza : 构建你的第一个 Plugin",
-    "description": "本文介绍了如何构建一个 eliza 插件，包括插件的结构、Action、Service、Provider 等模块的定义和使用方法，以及如何在 runtime 中调用和插件之间的互相调用。",
+    "description": "本文介绍了如何为 eliza 构建插件，包括插件的基本结构、Action 和 Service 的定义与使用，以及如何在 runtime 中调用和注册插件模块。还详细说明了插件之间的互相调用方式，如调用其他插件的 Service 和 Action，以及 Provider 的使用。",
     "id": "first-plugin-action"
   },
   {
     "title": "Run Eliza With Tee",
-    "description": "介绍TEE 的相关知识，以及如何使用TEE 运行Eliza 的 AI Agent.",
+    "description": "介绍TEE的相关知识，以及如何使用TEE运行Eliza的AI Agent。",
     "id": "tee-and-eliza"
   },
   {
     "title": "快速开始，构建一个 Telegram 的 Chatbot",
-    "description": "本指南详细介绍了如何从零开始构建一个 Telegram 聊天机器人。内容包括环境安装、NodeJS 配置、代码下载与构建、Telegram Bot 的申请与配置、大模型服务的选择与配置、以及常见问题的解决方法。此外，还提供了视频教程链接，帮助开发者更直观地理解和操作。",
+    "description": "本文介绍了如何从零开始构建一个 Telegram 聊天机器人。内容包括环境安装、NodeJS 配置、代码下载与启动、Telegram Bot 的申请与配置、大模型服务的选择与配置、以及常见问题的解决方法。通过本文，开发者可以快速搭建并测试自己的 Telegram 聊天机器人。",
     "id": "first-telegram-bot"
   },
   {
     "title": "Eliza 原理解析（上）：Agent 工具调用",
-    "description": "本文详细介绍了Eliza框架中Provider和Action的运行原理。Provider用于解决AI获取特定领域信息不准确的问题，而Action则封装了AI的执行代码，帮助AI理解并执行复杂任务。文章还探讨了AI如何通过Provider获取信息、如何调用Action以及如何让AI理解其调用的Action。",
+    "description": "本文介绍了Eliza框架中Provider和Action的运行原理。Provider用于获取特定领域的信息，解决通用大模型在信息获取上的不足；Action则封装了AI执行的具体操作，帮助AI理解并执行复杂任务。文章还探讨了如何通过Provider和Action的结合，使AI能够更准确地获取信息并执行相关操作。",
     "id": "eliza-baiscs-call-tools"
   },
   {
-    "title": "Eliza knowlege & memory",
-    "description": "Eliza 中的存储结构包括 Character、AgentRuntime、MemoryManagers 等组件，通过数据库适配器进行数据存储。缓存管理器 ICacheManager 提供 get、set、delete 接口，支持 redis、database、filesystem 三种存储方式。数据库支持 sqlite 和 postgres，作为数据持久层。知识碎片通过 uuid 生成唯一 id，处理模块位于 src/core/knowlege.ts，写入分两步进行。memoryManagers 包含多个管理器，如 messageManager、knowledgeManager 等。memory 的基本单位包括 id、userId、agentId 等字段。使用举例包括 memory 的写入和读取，以及 knowledge 的获取和写入。",
+    "title": "Eliza 知识管理与存储结构",
+    "description": "Eliza 的存储结构包括缓存管理器和数据库适配器，支持多种数据库类型如 SQLite 和 Postgres。知识碎片通过 UUID 唯一标识，处理模块分为文档管理和知识管理两部分。记忆管理器包含多个组件，如消息管理器和知识管理器，支持扩展。知识存储与记忆存储有所区别，知识更通用，记忆与房间相关。",
     "id": "custom-agent-withmemory"
   }
 ]
