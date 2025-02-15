@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - main
-      
 
 # 添加权限配置
 permissions:
@@ -19,7 +18,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -33,12 +31,12 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Run build
         run: pnpm run build
-      
-      - name: Add cname 
+
+      - name: Add cname
         run: echo "eliza101.xyz" > ./packages/page/dist//CNAME
 
       - name: Deploy to GitHub Pages
@@ -48,4 +46,4 @@ jobs:
           publish_dir: ./packages/page/dist/
           # 保持提交历史
           force_orphan: false
-          commit_message: 'deploy: ${{ github.event.head_commit.message }}' 
+          commit_message: "deploy: ${{ github.event.head_commit.message }}"
