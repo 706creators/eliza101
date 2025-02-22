@@ -286,3 +286,8 @@ runtime.ragKnowledgeManager 的方法写入
 import { embed, getEmbeddingZeroVector } from "….core/embedding.ts";
 const embedding = await embed(runtime, processed);
 ```
+
+
+###  视频教程
+
+[![Watch the video](https://img.youtube.com/vi/X16xm_3vPM4/0.jpg)](https://www.youtube.com/watch?v=X16xm_3vPM4)
