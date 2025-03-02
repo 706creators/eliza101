@@ -1,0 +1,10 @@
+{
+    "pages": [
+        "---Quick Start---",
+        "index",
+        "tools",
+        "first-plugin",
+        "knowlege-memory",
+        "run-with-tee"
+    ]
+}

@@ -37,13 +37,13 @@ jobs:
         run: pnpm run build
 
       - name: Add cname
-        run: echo "eliza101.xyz" > ./packages/page/dist//CNAME
+        run: echo "eliza101.xyz" > ./packages/eliza101/out/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/page/dist/
+          publish_dir: ./packages/eliza101/out/
           # 保持提交历史
           force_orphan: false
           commit_message: "deploy: ${{ github.event.head_commit.message }}"

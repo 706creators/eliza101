@@ -1,4 +1,7 @@
-# 快速开始，构建一个 Telegram 的 Chatbot
+---
+title: First Telegram Bot
+description: 基于 `eliza` 构建你的第一个Telegram Bot.
+---
 
 ## 1 环境安装
 
@@ -22,11 +25,11 @@ nvm install v23.3.0
 ```shell
 git clone https://github.com/elizaOS/eliza.git
 cd eliza
-git checkout $(git describe --tags --abbrev=0) 
+git checkout $(git describe --tags --abbrev=0)
 # 或者使用 v0.1.5-alpha.5
 git checkout v0.1.5-alpha.5 同时自带一个可以交互的 cli 环境
-pnpm install 
-pnpm run build 
+pnpm install
+pnpm run build
 ```
 
 ## 2 启动 `eliza`
@@ -60,7 +63,7 @@ TELEGRAM_BOT_TOKEN=.....
 OPENAI_API_KEY=                        # OpenAI API key, starting with sk-
 ```
 
-最新版本的 `eliza` 支持了 自定义 URL和模型的功能
+最新版本的 `eliza` 支持了 自定义 URL 和模型的功能
 
 ```shell
 OPENAI_API_KEY=sk-                   # OpenAI API key, starting with sk-
@@ -80,7 +83,9 @@ MEDIUM_OPENAI_MODEL=deepseek-chat            # Default: gpt-4o
 LARGE_OPENAI_MODEL=deepseek-chat             # Default: gpt-4o
 ```
 
-#### [RedPill](https://red-pill.ai/)
+#### redpill
+
+[RedPill](https://red-pill.ai/)
 
 ```shell
 REDPILL_API_KEY=sk-.....        # REDPILL API Key
@@ -116,29 +121,38 @@ pnpm run start --character ./telegram.json
 
 ### 1. **Install、Build 失败**
 
-   - 检查 NodeJS 版本
-   - 检查 Command Line Tools
-   - 检查 Git Tag
+- 检查 NodeJS 版本
+- 检查 Command Line Tools
+- 检查 Git Tag
 
 ### 2. **Build 总是失败**
 
-   尝试清理后重新安装
+尝试清理后重新安装
 
 ```shell
-pnpm run clean 
-pnpm run install 
-pnpm run build 
+pnpm run clean
+pnpm run install
+pnpm run build
 ```
 
 ### 3. **修改代码后不生效**
 
-   - 方案1
-    因为,`pnpm run start` 执行的是build 后的代码，所以，可以先 build。
-    `pnpm run build && pnpm run start`
-    
-   - 方案2
-    使用 `pnpm run dev` 代替 `pnpm run start`
+- 方案 1
+  因为,`pnpm run start` 执行的是 build 后的代码，所以，可以先 build。
+  `pnpm run build && pnpm run start`
+
+- 方案 2
+  使用 `pnpm run dev` 代替 `pnpm run start`
 
 ## 5. 视频教程
 
-[![Watch the video](https://img.youtube.com/vi/YRJFj6ku63E/0.jpg)](https://www.youtube.com/watch?v=YRJFj6ku63E&list=PLDbawyynbWCro_7nakrikFc7o-FdmXvMM)
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/YRJFj6ku63E?si=nipEUzOvkbD4xCsB"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+></iframe>
