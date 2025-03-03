@@ -77,12 +77,14 @@ pnpm run start --character=characters/eliza101.json
 
 自动发 Twitter 间隔配置
 
-| 环境变量          | 描述       |
-| ----------------- | ---------- |
-| POST_INTERVAL_MIN | 最小分钟数 |
-| POST_INTERVAL_MAX | 最大分钟数 |
+| 环境变量          | 描述                   | 默认  |
+| ----------------- | ---------------------- | ----- |
+| POST_INTERVAL_MIN | 最小分钟数             | 90    |
+| POST_INTERVAL_MAX | 最大分钟数             | 180   |
+| POST_IMMEDIATELY  | 启动后立即发送 twitter | false |
 
 bot 自动发 twitter 的间隔介于 POST_INTERVAL_MIN ~ POST_INTERVAL_MAX 分钟之间。
+默认在 90 ~ 180 分钟之间随机发 Twitter。
 
 配置逻辑：[client-twitter/src/post.ts:#L239](https://github.com/elizaos-plugins/client-twitter/blob/1dbcfa726d1e1f0efa6b95946b9e8b04d03167ef/src/post.ts#L239)
 
