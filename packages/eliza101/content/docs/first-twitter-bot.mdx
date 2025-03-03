@@ -58,6 +58,8 @@ pnpm run start --character=characters/eliza101.json
 
 这个时候，会报 Env 不存在的错误。
 
+![Image](images/twitter-leak-env.png)
+
 ## Env 配置选项
 
 | 环境变量           | 描述                                                    |
@@ -65,6 +67,56 @@ pnpm run start --character=characters/eliza101.json
 | TWITTER_USERNAME   | twitter 用户 id                                         |
 | TWITTER_PASSWORD   | 登录密码。如果你是 Gmail 登录过来的，需要单独设置一次。 |
 | TWITTER_EMAIL      | 注册邮箱                                                |
-| TWITTER_2FA_SECRET | 很重要，最好开启。                                      |
+| TWITTER_2FA_SECRET | 很重要，最好开启配置。                                  |
 
 配置好以上的选项，就可以登录成功了。
+
+Twitter 使用的 client 类库是：https://github.com/elizaOS/agent-twitter-client
+
+## 可能出现的问题:
+
+1. 操作过程中可能遇到网络错误,可以在 Agent 测尝试开启全局代理:
+
+```shell
+pnpm install undici # 在 agent 中安装依赖
+```
+
+agent/src/index.ts 中添加全局代理代码：
+
+```ts
+import { ProxyAgent, setGlobalDispatcher } from "undici";
+const setProxy = () => {
+  const proxy = process.env.AGENT_PROXY;
+  if (proxy) {
+    elizaLogger.info("start agents use proxy : ", proxy);
+    const proxyAgent = new ProxyAgent(proxy);
+    setGlobalDispatcher(proxyAgent);
+  }
+};
+
+setProxy();
+```
+
+2. 部分日志显示不全
+
+调整日志显示级别
+
+```shell
+DEFAULT_LOG_LEVEL=log # 默认是 info
+```
+
+全部的日志级别:
+
+```ts
+const customLevels: Record<string, number> = {
+  fatal: 60,
+  error: 50,
+  warn: 40,
+  info: 30,
+  log: 29,
+  progress: 28,
+  success: 27,
+  debug: 20,
+  trace: 10,
+};
+```
