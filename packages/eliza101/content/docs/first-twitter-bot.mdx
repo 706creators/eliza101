@@ -62,6 +62,8 @@ pnpm run start --character=characters/eliza101.json
 
 ## Env 配置选项
 
+### 1. 基本配置
+
 | 环境变量           | 描述                                                    |
 | ------------------ | ------------------------------------------------------- |
 | TWITTER_USERNAME   | twitter 用户 id                                         |
@@ -71,11 +73,70 @@ pnpm run start --character=characters/eliza101.json
 
 配置好以上的选项，就可以登录成功了。
 
+### 2. 高级配置
+
+自动发 Twitter 间隔配置
+
+| 环境变量          | 描述       |
+| ----------------- | ---------- |
+| POST_INTERVAL_MIN | 最小分钟数 |
+| POST_INTERVAL_MAX | 最大分钟数 |
+
+bot 自动发 twitter 的间隔介于 POST_INTERVAL_MIN ~ POST_INTERVAL_MAX 分钟之间。
+
+配置逻辑：[client-twitter/src/post.ts:#L239](https://github.com/elizaos-plugins/client-twitter/blob/1dbcfa726d1e1f0efa6b95946b9e8b04d03167ef/src/post.ts#L239)
+
+```ts title="client-twitter/src/post.ts"
+const generateNewTweetLoop = async () => {
+  const lastPost = await this.runtime.cacheManager.get<{
+    timestamp: number;
+  }>("twitter/" + this.twitterUsername + "/lastPost");
+
+  const lastPostTimestamp = lastPost?.timestamp ?? 0;
+  const minMinutes = this.client.twitterConfig.POST_INTERVAL_MIN;
+  const maxMinutes = this.client.twitterConfig.POST_INTERVAL_MAX;
+  const randomMinutes =
+    Math.floor(Math.random() * (maxMinutes - minMinutes + 1)) + minMinutes;
+  const delay = randomMinutes * 60 * 1000;
+
+  if (Date.now() > lastPostTimestamp + delay) {
+    await this.generateNewTweet();
+  }
+
+  setTimeout(() => {
+    generateNewTweetLoop(); // Set up next iteration
+  }, delay);
+
+  elizaLogger.log(`Next tweet scheduled in ${randomMinutes} minutes`);
+};
+```
+
 Twitter 使用的 client 类库是：https://github.com/elizaOS/agent-twitter-client
 
-## 可能出现的问题:
+## 可能出现的问题
 
-1. 操作过程中可能遇到网络错误,可以在 Agent 测尝试开启全局代理:
+### 1. 插件安装出现网络连接错误
+
+修改 packages/cli/src/index.js 使用 axios 代替 fetch ， 并启动 proxy 配置。
+
+```shell
+pnpm install axios
+```
+
+替换代码:
+
+```js
+async function getPlugins() {
+  const resp = await axios.get(
+    "https://raw.githubusercontent.com/elizaos-plugins/registry/refs/heads/main/index.json"
+  );
+  return resp.data;
+}
+```
+
+### 2. 操作过程中可能遇到网络错误
+
+可以在 Agent 测尝试开启全局代理
 
 ```shell
 pnpm install undici # 在 agent 中安装依赖
@@ -97,7 +158,7 @@ const setProxy = () => {
 setProxy();
 ```
 
-2. 部分日志显示不全
+### 3. 部分日志显示不全
 
 调整日志显示级别
 
