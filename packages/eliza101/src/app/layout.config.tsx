@@ -28,5 +28,6 @@ export const baseOptions: BaseLayoutProps = {
       </>
     ),
   },
+  githubUrl: "https://github.com/706creators/eliza101",
   links: [],
 };
