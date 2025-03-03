@@ -71,17 +71,28 @@ pnpm run start --character=characters/eliza101.json
 | TWITTER_EMAIL      | 注册邮箱                                                |
 | TWITTER_2FA_SECRET | 很重要，最好开启配置。                                  |
 
+Cookie 模式登录
+
+| 环境变量                   | 浏览器 cookie 名称 |
+| -------------------------- | ------------------ |
+| TWITTER_COOKIES_AUTH_TOKEN | auth_token         |
+| TWITTER_COOKIES_CT0        | ct0                |
+| TWITTER_COOKIES_GUEST_ID   | guest_id           |
+
+从浏览器的 cookie 中获取，当以上的登录方式被 Deny 的时候，可以尝试 Cookie 模式。
+
 配置好以上的选项，就可以登录成功了。
 
 ### 2. 高级配置
 
-自动发 Twitter 间隔配置
+#### 自动发 Twitter 配置
 
-| 环境变量          | 描述                   | 默认  |
-| ----------------- | ---------------------- | ----- |
-| POST_INTERVAL_MIN | 最小分钟数             | 90    |
-| POST_INTERVAL_MAX | 最大分钟数             | 180   |
-| POST_IMMEDIATELY  | 启动后立即发送 twitter | false |
+| 环境变量                       | 描述                   | 默认  |
+| ------------------------------ | ---------------------- | ----- |
+| POST_INTERVAL_MIN              | 最小分钟数             | 90    |
+| POST_INTERVAL_MAX              | 最大分钟数             | 180   |
+| POST_IMMEDIATELY               | 启动后立即发送 twitter | false |
+| ENABLE_TWITTER_POST_GENERATION | 是否开启自动生成       | true  |
 
 bot 自动发 twitter 的间隔介于 POST_INTERVAL_MIN ~ POST_INTERVAL_MAX 分钟之间。
 默认在 90 ~ 180 分钟之间随机发 Twitter。
@@ -113,7 +124,17 @@ const generateNewTweetLoop = async () => {
 };
 ```
 
+如果你想关闭自动生成 twitter， 可以把 ENABLE_TWITTER_POST_GENERATION 设置为 false.
+
 Twitter 使用的 client 类库是：https://github.com/elizaOS/agent-twitter-client
+
+#### Twitter 动作响应
+
+| 环境变量              | 描述         | 默认 |
+| --------------------- | ------------ | ---- |
+| TWITTER_POLL_INTERVAL | 动作检查频率 | 120  |
+
+每隔一段时间拉取需要响应的动作，做出反馈。
 
 ## 可能出现的问题
 
