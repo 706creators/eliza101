@@ -1,0 +1,69 @@
+---
+title: First Twitter Bot (Draft)
+description: 你的第一个Twitter Bot
+---
+
+## 配置 eliza 环境 (v0.25.9)
+
+```shell
+git clone https://github.com/elizaOS/eliza.git
+cd eliza
+git checkout v0.25.9
+```
+
+安装插件
+
+```shell
+npx elizaos plugins list    # 列出插件（已安装)
+npx elizaos plugins install @elizaos-plugins/client-twitter # 安装插件
+```
+
+插件仓库: https://github.com/elizaos-plugins
+
+这个版本的 `eliza` 弱化了 client 的概念，把 client 统一到了 plugin 里边。
+
+install & build :
+
+```shell
+node -v
+pnpm install
+pnpm run build
+```
+
+## character 配置
+
+在 character 中配置 llm 的 modelProvider 和 plugins
+
+```json
+{
+  ...
+  "modelProvider": "redpill",
+  "plugins": ["@elizaos-plugins/client-twitter"]
+  ...
+}
+```
+
+twitter 相关的 plugin 有两个:
+
+- @elizaos-plugins/client-twitter
+- @elizaos-plugins/plugin-twitter
+  只包含一个发 twitter 的 Action : POST_TWEET
+
+尝试启动 `Agent`
+
+```shell
+pnpm run start --character=characters/eliza101.json
+```
+
+这个时候，会报 Env 不存在的错误。
+
+## Env 配置选项
+
+| 环境变量           | 描述                                                    |
+| ------------------ | ------------------------------------------------------- |
+| TWITTER_USERNAME   | twitter 用户 id                                         |
+| TWITTER_PASSWORD   | 登录密码。如果你是 Gmail 登录过来的，需要单独设置一次。 |
+| TWITTER_EMAIL      | 注册邮箱                                                |
+| TWITTER_2FA_SECRET | 很重要，最好开启。                                      |
+
+配置好以上的选项，就可以登录成功了。
