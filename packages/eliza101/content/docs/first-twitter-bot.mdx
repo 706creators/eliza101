@@ -183,3 +183,13 @@ const customLevels: Record<string, number> = {
   trace: 10,
 };
 ```
+
+### 4. Twitter 账号被锁
+
+登录 Twitter 时候，太频繁会出现账号被锁的情况，日志如下:
+
+```shell
+[2025-03-03 09:37:02] ERROR: Login attempt failed: {"errors":[{"code":326,"message":"To protect our users from spam and other malicious activity, this account is temporarily locked. Please log in to https://twitter.com to unlock your account.","sub_error_code":0,"bounce_location":"https://twitter.com/account/access"}]}
+```
+
+登录 Twitter 账号解锁。
