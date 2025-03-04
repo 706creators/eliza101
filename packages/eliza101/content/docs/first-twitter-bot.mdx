@@ -1,5 +1,5 @@
 ---
-title: First Twitter Bot (Draft)
+title: First Twitter Bot
 description: 你的第一个Twitter Bot
 icon: Twitter
 ---
@@ -134,7 +134,96 @@ Twitter 使用的 client 类库是：https://github.com/elizaOS/agent-twitter-cl
 | --------------------- | ------------ | ---- |
 | TWITTER_POLL_INTERVAL | 动作检查频率 | 120  |
 
-每隔一段时间拉取需要响应的动作，做出反馈。
+每隔一段时间 （默认 2 分钟）拉取需要响应的动作，做出反馈。
+
+动作响应源数据
+
+```ts title="src/interactions.ts"
+const mentionCandidates = (
+  await this.client.fetchSearchTweets(
+    `@${twitterUsername}`,
+    20,
+    SearchMode.Latest
+  )
+).tweets;
+```
+
+响应动作分类:
+
+- at 提及
+- 回复
+- 引用
+- 私信
+
+### 搜索功能
+
+开启方法：
+
+```shell
+TWITTER_SEARCH_ENABLE=true # 默认 false
+```
+
+Agent 可以根据 character 中定义的 topics 搜索相关 twitter， 并自动完成交互。
+
+```json
+...
+"topics": ["eliza","ai16z"],
+...
+```
+
+相关代码：
+
+```ts title="src/search.ts"
+private engageWithSearchTermsLoop() {
+    this.engageWithSearchTerms().then();
+    // 生成频率
+    const randomMinutes = Math.floor(Math.random() * (120 - 60 + 1)) + 60;
+    elizaLogger.log(
+        `Next twitter search scheduled in ${randomMinutes} minutes`
+    );
+    setTimeout(
+        () => this.engageWithSearchTermsLoop(),
+        randomMinutes * 60 * 1000
+    );
+}
+
+private async engageWithSearchTerms() {
+    elizaLogger.log("Engaging with search terms");
+    ......
+
+    const searchTerm = [...this.runtime.character.topics][
+        Math.floor(Math.random() * this.runtime.character.topics.length)
+    ];
+
+    elizaLogger.log("Fetching search tweets");
+    // TODO: we wait 5 seconds here to avoid getting rate limited on startup, but we should queue
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    const recentTweets = await this.client.fetchSearchTweets(
+        searchTerm,
+        20,
+        SearchMode.Top
+    );
+    elizaLogger.log("Search tweets fetched");
+}
+
+```
+
+#### 其他功能
+
+- space 功能
+
+需要一个 tts 的 api key。
+
+```shell
+TWITTER_SPACES_ENABLE=false
+ELEVENLABS_XI_API_KEY=     # Required for TTS in Spaces
+```
+
+- discord 许可的 twitter 发送
+
+1. 生成 twitter 内容发送到一个 discord 的 channel
+2. 用户可以通过或者拒绝发送这条 twitter
+3. 许可的 twitter 内容会自动发送
 
 ## 可能出现的问题
 
