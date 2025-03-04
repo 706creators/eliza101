@@ -167,7 +167,7 @@ pnpm install undici # 在 agent 中安装依赖
 
 agent/src/index.ts 中添加全局代理代码：
 
-```ts
+```ts title="agent/src/index.ts"
 import { ProxyAgent, setGlobalDispatcher } from "undici";
 const setProxy = () => {
   const proxy = process.env.AGENT_PROXY;
