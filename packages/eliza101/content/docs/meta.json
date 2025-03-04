@@ -1,12 +1,13 @@
 {
     "pages": [
         "---Quick Start---",
+        "basic-start",
         "first-telegram-bot",
         "first-twitter-bot",
         "tools",
         "first-plugin",
-        "new-client",
         "knowlege-memory",
+        "new-client",
         "run-with-tee"
     ]
 }
